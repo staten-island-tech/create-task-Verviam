@@ -9,6 +9,17 @@ html, * body {
 }
 
 h1 {
-  font-size: var(--h1)
+  font-size: var(--h1);
+  display: flex;
+  justify-content: center;
+}
 
+.toDos {
+  display: flex;
+  justify-content: center;
+}
+
+.to-do-user-input{
+  display: flex;
+  justify-content: center;
 }
