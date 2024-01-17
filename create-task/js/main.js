@@ -1,14 +1,21 @@
 import  {DOMSelectors} from "./dom.js"
+import "../css/style.css"
 
 const ToDoItems = []
 
-function addToDo () {
+function addToDo (event) {
   const inputtedToDo = DOMSelectors.userInput.value
-  ToDoItems.push(inputtedToDo)
-  console.log(ToDoItems)
-  DOMSelectors.toDoList.insertAdjacentHTML("beforeend", 
-  `<div class = "to-do-card"></div>`)
+  event.preventDefault()
+  ToDoItems.push(inputtedToDo);
+
+  ToDoItems.forEach(inputs => {
+    DOMSelectors.toDoList.insertAdjacentHTML("beforeend", 
+    `<div class = "to-do-card">${inputs}</div>`)
+  });
  
 }
 
-DOMSelectors.addButton.addEventListener("click", addToDo)
+// if more than 1 to do, put on new line
+// add remove button
+// check for requirements
+DOMSelectors.submitButton.addEventListener("click", addToDo)

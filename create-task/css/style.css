@@ -23,3 +23,11 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.to-do-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  outline: 0.2rem solid rosybrown;;
+}
