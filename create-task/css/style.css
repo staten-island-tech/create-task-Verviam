@@ -17,17 +17,24 @@ h1 {
 .toDos {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  flex-wrap: wrap;
 }
 
 .to-do-user-input{
   display: flex;
   justify-content: center;
+  margin: 2em;
 }
 
 .to-do-card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: wrap;
-  outline: 0.2rem solid rosybrown;;
+  align-items: center;
+  outline: 0.2rem solid rosybrown;
+  padding: 0.2em;
+  margin: 0.3em;
+  margin-left: 3em;
+  margin-right: 3em;
+  font-size: 2em;
 }

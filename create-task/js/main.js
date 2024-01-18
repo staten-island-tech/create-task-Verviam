@@ -8,13 +8,15 @@ function addToDo (event) {
   event.preventDefault()
   ToDoItems.push(inputtedToDo);
 
-  ToDoItems.forEach(inputs => {
+    ToDoItems.forEach(inputs => {
     DOMSelectors.toDoList.insertAdjacentHTML("beforeend", 
     `<div class = "to-do-card">${inputs}</div>`)
   });
- 
+
 }
 
+ 
+// if it's already displayed, dont for each it
 // if more than 1 to do, put on new line
 // add remove button
 // check for requirements
