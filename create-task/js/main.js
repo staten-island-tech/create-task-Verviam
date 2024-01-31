@@ -2,38 +2,34 @@ import  {DOMSelectors} from "./dom.js"
 import "../css/style.css"
 
 const ToDoItems = []
-const updatedToDoItems = []
 
 function addToDo (event) {
+  DOMSelectors.toDoList.innerHTML = ""
+  DOMSelectors.userInput.value = ""
   const inputtedToDo = DOMSelectors.userInput.value
   event.preventDefault()
   ToDoItems.push(inputtedToDo);
-
-    if (!ToDoItems.includes(inputtedToDo)){
-      ToDoItems.push(inputtedToDo)
-      DOMSelectors.userInput.value = ""
-      displayToDoList()
-  // if it's already displayed, dont for each it
-  // if more than 1 to do, put on new line
-    }
+  displayToDoList()
 }
 
 function displayToDoList() {
-  DOMSelectors.toDoList.innerHTML = ""
-  updatedToDoItems.forEach(inputs => {
+    ToDoItems.forEach(inputs => {
     DOMSelectors.toDoList.insertAdjacentHTML("beforeend", 
     `<div class="card"><div class = "to-do-card">${inputs}</div>
     <button type ="submit" class="remove-button" id="remove-reminder"> Remove </button>
     </div>`)}
     )
+    const toDoCard = document.querySelectorAll(".to-do-card")
+
+    function removeToDo () {
+      toDoCard.innerHTML = ""
+    }
+
+    DOMSelectors.removeButton.addEventListener("click", removeToDo)
 }
 
-function removeToDo () {
-
-}
-
-// add remove button
-// check for requirements
+// function with parameter
+// list
+// algorithm that includes sequence, selection, and iteration
 
 DOMSelectors.submitButton.addEventListener("click", addToDo)
-DOMSelectors.removeButton.addEventListener("click", removeToDo)
