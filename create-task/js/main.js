@@ -23,24 +23,20 @@ function displayToDoList() {
     removeButton.forEach(button => {
       button.addEventListener("click", removeToDo)
     })
-    const toDoCard = document.querySelectorAll(".to-do-card")
 
     function removeToDo () {
       const specificCard = this.parentElement;
+      const specificCardText = specificCard.querySelector('.to-do-card').textContent;
+
       for (let i=0; i<ToDoItems.length; i++) {
-        if (ToDoItems[i] === specificCard.innerHTML){ //something wrong here
-          ToDoItems.splice(ToDoItems[i])
+        if (ToDoItems[i] === specificCardText){ 
+          ToDoItems.splice(i, 1)
+          break;
         }
       }
-      // loop thru array and splice if inner html found
-
-      specificCard.innerHTML = ""
+      specificCard.remove();
     }
 
 }
-
-// function with parameter
-// list
-// algorithm that includes sequence, selection, and iteration
 
 DOMSelectors.submitButton.addEventListener("click", addToDo)
