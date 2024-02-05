@@ -8,12 +8,12 @@ function addToDo (event) {
   const inputtedToDo = DOMSelectors.userInput.value
   event.preventDefault()
   ToDoItems.push(inputtedToDo);
-  displayToDoList()
+  displayToDoList(ToDoItems)
   DOMSelectors.userInput.value = ""
 }
 
-function displayToDoList() {
-    ToDoItems.forEach(inputs => {
+function displayToDoList(array) {
+    array.forEach(inputs => {
     DOMSelectors.toDoList.insertAdjacentHTML("beforeend", 
     `<div class="card"><div class = "to-do-card">${inputs}</div>
     <button type ="submit" class="remove-button" id="remove-reminder"> Remove </button>
